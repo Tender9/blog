@@ -1,1 +1,0 @@
-import{u as s,j as r}from"./index-BQAZKrEo.js";function n(){const e=s();return console.error(e),r.jsxs("div",{id:"error-page",children:[r.jsx("h1",{children:"Oops!"}),r.jsx("p",{children:"Sorry, an unexpected error has occurred."}),r.jsx("p",{children:r.jsx("i",{children:e.statusText||e.message})})]})}export{n as default};
