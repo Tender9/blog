@@ -3,8 +3,6 @@
 import { defineConfig } from "vitepress";
 import set_sidebar from "./utils/autoSetSidebarByDir.mjs";
 
-// https://vitepress.dev/reference/site-config
-
 const configPage = defineConfig({
     base: "/blog/",
     title: "进阶之路",

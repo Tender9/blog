@@ -14,6 +14,4 @@ const themeConfig = {
     },
 };
 
-console.log(themeConfig, "themeConfig");
-
 export default themeConfig;

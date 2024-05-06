@@ -80,22 +80,6 @@ This is a dangerous warning.
 This is a details block.
 :::
 
-
-::: code-group
-
-```sh [pnpm]
-#查询pnpm版本
-pnpm -v
-```
-
-```sh [yarn]
-#查询yarn版本
-yarn -v
-```
-
-:::
-
 ## More
 
 Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown).
-

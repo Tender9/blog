@@ -3,6 +3,12 @@
 import path from "node:path";
 import fs from "node:fs";
 
+// 白名单,过滤不是文章的文件和文件夹
+const WHITE_LIST = ["index.md", ".vitepress", "node_modules", ".idea", "assets"];
+
+// 取差值
+const intersections = (arr1, arr2) => Array.from(new Set(arr1.filter((item) => !new Set(arr2).has(item))));
+
 const set_sidebar = (pathname) => {
     // 文件根目录
     const DIR_PATH = path.resolve();
@@ -13,8 +19,10 @@ const set_sidebar = (pathname) => {
     // 读取pathname下的所有文件或者文件夹
     const files = fs.readdirSync(dirPath);
 
+    const items = intersections(files, WHITE_LIST);
+
     // getList 函数后面会讲到
-    return getList(files, dirPath, pathname);
+    return getList(items, dirPath, pathname);
 };
 
 // 把方法导出直接使用
