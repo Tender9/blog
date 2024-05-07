@@ -2,6 +2,7 @@
 
 import path from "node:path";
 import fs from "node:fs";
+import dataTree from "../FolderMappings.mjs";
 
 // 白名单,过滤不是文章的文件和文件夹
 const WHITE_LIST = ["index.md", ".vitepress", "node_modules", ".idea", "assets"];
@@ -16,8 +17,15 @@ const set_sidebar = (pathname) => {
     // 获取pathname的路径
     const dirPath = path.join(DIR_PATH, pathname);
 
-    // 读取pathname下的所有文件或者文件夹
-    const files = fs.readdirSync(dirPath);
+    let files;
+
+    try {
+        // 读取pathname下的所有文件或者文件夹
+        files = fs.readdirSync(dirPath);
+    } catch (err) {
+        // 处理目录不存在的情况
+        return;
+    }
 
     const items = intersections(files, WHITE_LIST);
 
@@ -70,4 +78,10 @@ function getList(params, path1, pathname) {
     return res;
 }
 
-export default set_sidebar;
+// 生成 sidebars
+const sidebars = {};
+dataTree.forEach((item) => {
+    sidebars[item.dir] = set_sidebar(item.dir);
+});
+
+export default sidebars;

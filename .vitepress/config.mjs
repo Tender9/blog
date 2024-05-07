@@ -1,7 +1,8 @@
 /** @format */
 
 import { defineConfig } from "vitepress";
-import set_sidebar from "./utils/autoSetSidebarByDir.mjs";
+import sidebars from "./utils/auto_generate_bar.mjs";
+import navList from "./utils/auto_generate_nav.mjs";
 
 const configPage = defineConfig({
     base: "/blog/",
@@ -11,31 +12,17 @@ const configPage = defineConfig({
     head: [["link", { rel: "icon", href: "/blog/logo.svg" }]],
     appearance: "dark",
     titleTemplate: "~o(*￣▽￣*)ブ，我的发，欢迎访问 Tender9 的个人网站 | :title ",
-    cleanUrls: true,
+    cleanUrls: true, // 删除 URL 中的 .html 后缀
     themeConfig: {
-        outlineTitle: "目录",
-        outline: [2, 6],
+        outlineTitle: "大纲目录",
+        outline: [1, 6],
         logo: "/logo.svg",
+        activeHeaderLinks: true, // 启用导航栏激活时的高亮显示
         // 导航栏
-        nav: [
-            { text: "首页", link: "/" },
-            { text: "前端", link: "/docs/front-end/vue.md" },
-            { text: "后端", link: "/docs/backend/Java.md" },
-            {
-                text: "指南",
-                items: [
-                    { text: "前言", link: "/preface", noIcon: false },
-                    { text: "快速上手", link: "/getting-started" },
-                    { text: "配置", link: "/configuration" },
-                ],
-            },
-        ],
+        nav: navList,
 
         // 左侧边栏
-        sidebar: {
-            "docs/front-end": set_sidebar("docs/front-end"),
-            "docs/backend": set_sidebar("docs/backend"),
-        },
+        sidebar: sidebars,
 
         // 搜索
         search: {
@@ -76,9 +63,11 @@ const configPage = defineConfig({
         ],
 
         footer: {
-            message: "MIT License",
-            copyright: "©2023 ByTender9",
+            message: "Released under the MIT License.",
+            copyright: "©2023 Tender9",
         },
+        // 最后更新于
+        lastUpdated: "上次更新", // string | boolean
     },
 });
 

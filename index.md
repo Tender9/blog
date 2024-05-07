@@ -2,8 +2,8 @@
 layout: home
 
 hero:
-  name: ""
-  text: ""
+  name: "WHAT IS A SUCCESSFUL LIFE"
+  text: "Continue"
   tagline: LIFE IS FUCKING MOVIE
   image:
     src: /user.svg
@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: yarn dev
-      link: /markdown-examples
+      link: /docs/index
 
 features:
   - title: Where did you see me 🚀

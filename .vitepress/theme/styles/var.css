@@ -12,6 +12,9 @@ h1 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.vp-doc img {
+    margin: 0 auto;
+}
 
 /* 提示框 */
 .custom-block.tip {
