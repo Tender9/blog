@@ -4,7 +4,7 @@
 set -e  #有错误抛出错误
  
 # 构建
-yarn run docs:build  #然后执行打包命令
+yarn run build  #然后执行打包命令
  
 # 进入待发布的目录
 cd .vitepress/dist  #进到dist目录
@@ -17,4 +17,4 @@ git push -f git@github.com:Tender9/blog.git master:root-pages  #提交到这个�
  
 cd -
  
-rm -rf .vitepress/dist  #删除.vitepress文件夹
+rm -rf .vitepress/dist  #删除 dist 文件夹

@@ -53,10 +53,10 @@ function findFirstValidLink(array) {
 }
 
 navList.push({
-    text: "Dropdown Menu",
+    text: "指南",
     items: [
-        { text: "Item A", link: "/item-1" },
-        { text: "Item B", link: "/item-2" },
+        { text: "配置", link: "/docs/info/config.md" },
+        { text: "markdown语法", link: "/docs/info/markdown.md" },
         { text: "Item C", link: "/item-3" },
     ],
 });

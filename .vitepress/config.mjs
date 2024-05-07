@@ -67,7 +67,9 @@ const configPage = defineConfig({
             copyright: "©2023 Tender9",
         },
         // 最后更新于
-        lastUpdated: "上次更新", // string | boolean
+        lastUpdated: {
+            text: "最后更新于",
+        },
     },
 });
 
