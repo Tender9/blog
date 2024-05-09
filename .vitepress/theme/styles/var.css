@@ -43,3 +43,6 @@ h1 {
     position: relative;
     border-left: 4px solid #e95f59;
 }
+.VPSidebar .nav {
+    color: red !important;
+}

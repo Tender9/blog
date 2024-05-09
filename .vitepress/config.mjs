@@ -8,7 +8,7 @@ const configPage = defineConfig({
     base: "/blog/",
     title: "进阶之路",
     description: "Tender9 的博客",
-    locales: { "/": { lang: "zh-CN" } },
+    lang: "zh-CN",
     head: [["link", { rel: "icon", href: "/blog/logo.svg" }]],
     appearance: "dark",
     titleTemplate: "~o(*￣▽￣*)ブ，我的发，欢迎访问 Tender9 的个人网站 | :title ",

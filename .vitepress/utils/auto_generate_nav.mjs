@@ -57,7 +57,7 @@ navList.push({
     items: [
         { text: "配置", link: "/docs/info/config.md" },
         { text: "markdown语法", link: "/docs/info/markdown.md" },
-        { text: "Item C", link: "/item-3" },
+        { text: "日常Q&A", link: "/docs/info/anyIssue.md" },
     ],
 });
 

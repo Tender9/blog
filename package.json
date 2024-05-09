@@ -1,6 +1,7 @@
 {
     "license": "ISC",
     "devDependencies": {
+        "sass": "^1.77.0",
         "vitepress": "^1.1.4"
     },
     "scripts": {
@@ -9,5 +10,10 @@
         "build": "vitepress build",
         "serve": "vitepress serve docs",
         "preview": "vitepress preview"
+    },
+    "dependencies": {
+        "@ant-design/icons-vue": "^7.0.1",
+        "ant-design-vue": "^4.2.1",
+        "nanoid": "^5.0.7"
     }
 }
