@@ -6,7 +6,7 @@
 - 技术博客：[http://old.ftqq.com](http://old.ftqq.com)
 - Github：[http://github.com/Tender9](http://github.com/Tender9)
 - 期望职位：前端开发工程师
-- 希望的城市：北京、深圳、重庆
+- 期望城市：北京、深圳、重庆
 
 ## 联系方式
 

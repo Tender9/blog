@@ -4,8 +4,7 @@ import DefaultTheme from "vitepress/theme";
 import "./styles/default.css";
 import "./styles/var.css";
 
-import TimeLine from "./compements/TimeLine.vue";
-
+import TimeLine from "./components/TimeLine/TimeLine.vue";
 const themeConfig = {
     extends: DefaultTheme,
     Layout: () => {

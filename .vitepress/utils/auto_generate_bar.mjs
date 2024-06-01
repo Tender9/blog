@@ -2,13 +2,16 @@
 
 import path from "node:path";
 import fs from "node:fs";
-import dataTree from "../FolderMappings.mjs";
+import dataTree from "./showDirTree.mjs";
 
 // 白名单,过滤不是文章的文件和文件夹
-const WHITE_LIST = ["index.md", ".vitepress", "node_modules", ".idea", "assets"];
+const WHITE_LIST = [".vitepress", "node_modules", ".idea", "assets"];
 
 // 取差值
 const intersections = (arr1, arr2) => Array.from(new Set(arr1.filter((item) => !new Set(arr2).has(item))));
+
+// 判断是否是文件夹
+const isDirectory = (path) => fs.lstatSync(path).isDirectory();
 
 const set_sidebar = (pathname) => {
     // 文件根目录
@@ -29,17 +32,24 @@ const set_sidebar = (pathname) => {
 
     const items = intersections(files, WHITE_LIST);
 
+    let markdownFile = [];
+
+    items.sort((next, prev) => {
+        // 完整文件路径
+        const nextIndex = isDirectory(path.join(dirPath, next));
+        const prevIndex = isDirectory(path.join(dirPath, prev));
+        return prevIndex - nextIndex;
+    });
+
     // getList 函数后面会讲到
     return getList(items, dirPath, pathname);
 };
 
 // 把方法导出直接使用
-// params = ['react.md', 'vue.md'],path1="E:\...\front-end", pathname = "docs/front-end"
+
 function getList(params, path1, pathname) {
     // 存放结果
     const res = [];
-    // 判断是否是文件夹
-    const isDirectory = (path) => fs.lstatSync(path).isDirectory();
 
     // 开始遍历params
     for (let file in params) {
@@ -52,11 +62,12 @@ function getList(params, path1, pathname) {
         if (isDir) {
             // 如果是文件夹,读取之后作为下一次递归参数
             const files = fs.readdirSync(dir);
+            const items = intersections(files, WHITE_LIST);
             res.push({
                 text: params[file],
                 collapsible: true, // 开启折叠
                 collapsed: true,
-                items: getList(files, dir, `${pathname}/${params[file]}`),
+                items: getList(items, dir, `${pathname}/${params[file]}`),
             });
         } else {
             // 获取名字

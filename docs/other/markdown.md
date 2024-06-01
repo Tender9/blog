@@ -1,3 +1,8 @@
+---
+prev: '页面 | 更详细的页面配置'
+next: 'Markdown | 更详细的markdown'
+---
+
 # Markdown 使用指南
 
 ## 1. 标题
@@ -54,7 +59,7 @@
 使用 `[链接文字](链接地址)` 来插入链接：
 
 ```markdown
-[链接文字](链接地址)
+[链接文字](链接地址/路径)
 ```
 
 ### 图片
@@ -136,6 +141,13 @@ TODO-LIST
    1. - [x] 单词打卡
    2. - [x] 了解tree shaking
 ```
+
+
+## 9. vitepress中的扩展
+
+[Markdown Extensions](https://vitepress.dev/guide/markdown)
+
+
 
 
 

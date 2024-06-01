@@ -1,7 +1,11 @@
 <!-- @format -->
 
 <template>
-    <Timeline mode="alternate">
+    <Timeline
+        mode="alternate"
+        reverse
+    >
+        <slot></slot>
         <TimelineItem
             v-for="item in issues"
             :key="item.id"
@@ -14,16 +18,18 @@
                         #cover
                         v-if="item.imgUrl"
                     >
-                        <img
-                            ref="pic"
-                            alt="example"
-                            :src="item.imgUrl"
-                            @click="handlePreview(item)"
-                        />
+                        <div>
+                            <img
+                                v-if="item.imgUrl"
+                                ref="pic"
+                                alt="example"
+                                :src="item.imgUrl"
+                                @click="handlePreview(item)"
+                            />
+                        </div>
                     </template>
-                    <span slot="title">Q：{{ item.title }}</span>
-                    <br />
-                    <span slot="description">A：{{ item.description }}</span>
+
+                    <div slot="description">{{ item.description }}</div>
                 </Card>
             </div>
         </TimelineItem>
@@ -39,14 +45,11 @@
     const pic = ref();
     const issues = ref(issuesList);
 
-    console.log(issuesList, "list");
-
     const handlePreview = (pic) => {
-        console.log(pic);
         // 图片URL
         const imageUrl = pic.imgUrl;
 
-        const imageTitle = pic.id + ".png";
+        const imageTitle = pic.description + ".png";
 
         // 创建一个新的浏览器窗口或标签页
         const previewWindow = window.open("about:blank", "_blank");
@@ -77,6 +80,7 @@
             color: var(--vp-c-text-1);
             background-color: var(--vp-c-bg);
             text-align: left;
+            padding-left: 1em;
             font-size: 14px;
         }
         .ant-timeline-item-tail {

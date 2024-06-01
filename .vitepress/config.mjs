@@ -17,12 +17,16 @@ const configPage = defineConfig({
         outlineTitle: "大纲目录",
         outline: [1, 6],
         logo: "/logo.svg",
-        activeHeaderLinks: true, // 启用导航栏激活时的高亮显示
+        activeHeaderLinks: true,
+
         // 导航栏
         nav: navList,
 
         // 左侧边栏
         sidebar: sidebars,
+
+        //返回顶部文字修改
+        returnToTopLabel: "返回顶部",
 
         // 搜索
         search: {

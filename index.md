@@ -11,10 +11,9 @@ hero:
   actions:
     - theme: brand
       text: yarn dev
-      link: /docs/index
+      link: /resume.md
 
 features:
   - title: Where did you see me 🚀
     details: For more information, please contact.
 ---
-

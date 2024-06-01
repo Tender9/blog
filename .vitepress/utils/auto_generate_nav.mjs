@@ -1,7 +1,7 @@
 /** @format */
 
 import sidebars from "./auto_generate_bar.mjs";
-import dataTree from "../FolderMappings.mjs";
+import dataTree from "./showDirTree.mjs";
 
 /**
  ** @Author: Tender9
@@ -51,14 +51,5 @@ function findFirstValidLink(array) {
         }
     }
 }
-
-navList.push({
-    text: "指南",
-    items: [
-        { text: "配置", link: "/docs/info/config.md" },
-        { text: "markdown语法", link: "/docs/info/markdown.md" },
-        { text: "日常Q&A", link: "/docs/info/anyIssue.md" },
-    ],
-});
 
 export default navList;

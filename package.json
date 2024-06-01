@@ -2,7 +2,7 @@
     "license": "ISC",
     "devDependencies": {
         "sass": "^1.77.0",
-        "vitepress": "^1.1.4"
+        "vitepress": "^1.1.2"
     },
     "scripts": {
         "deploy": "bash deploy.sh",
