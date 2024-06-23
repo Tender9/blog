@@ -6,14 +6,14 @@ import "./styles/var.css";
 
 import TimeLine from "./components/TimeLine/TimeLine.vue";
 const themeConfig = {
-    extends: DefaultTheme,
-    Layout: () => {
-        return h(DefaultTheme.Layout, null, {});
-    },
-    enhanceApp({ app, router, siteData }) {
-        // ...
-        app.component("TimeLine", TimeLine);
-    },
+  extends: DefaultTheme,
+  Layout: () => {
+    return h(DefaultTheme.Layout, null, {});
+  },
+  enhanceApp({ app, router, siteData }) {
+    // ...
+    app.component("TimeLine", TimeLine);
+  },
 };
 
 export default themeConfig;
