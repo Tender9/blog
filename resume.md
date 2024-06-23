@@ -3,8 +3,6 @@
 - 泡沫 / 男 / 1998
 - 本科 / 双非二本
 - 工作经验：3年
-- 技术博客：[http://old.ftqq.com](http://old.ftqq.com)
-- Github：[http://github.com/Tender9](http://github.com/Tender9)
 - 期望职位：前端开发工程师
 - 期望城市：北京、深圳、重庆
 
