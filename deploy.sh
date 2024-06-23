@@ -5,7 +5,7 @@ set -e  #有错误抛出错误
 
 git add .
 git commit -m "update"
-git push -f git@github.com:Tender9/blog.git main  #提交到这个分支
+git push -f https://github.com/Tender9/blog.git main  #提交到这个分支
  
 # 构建
 npm run build  #然后执行打包命令
@@ -17,7 +17,7 @@ git init  #执行这些git命令
 git add -A
 git commit -m 'deploy'
  
-git push -f git@github.com:Tender9/blog.git root-pages  #提交到这个分支
+git push -f https://github.com/Tender9/blog.git root-pages  #提交到这个分支
  
 cd -
  
