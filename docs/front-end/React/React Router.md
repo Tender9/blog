@@ -282,9 +282,11 @@ searchParams 包括了增删改查功能函数，改变当前 url 中查询字�
 
 ② 通过 Link 标签
 
-> ​    <button onClick={() => navigate("user/1829454598")}>跳转A</button>{" "}
+
+
+>  <button onClick={() => navigate("user/1829454598")}>跳转A</button>{" "}
 >
-> ​    <Link to="user/1829454598">跳转A</Link>
+>  <Link to="user/1829454598">跳转A</Link>
 
 
 
