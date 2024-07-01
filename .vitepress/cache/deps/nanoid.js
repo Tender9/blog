@@ -1,4 +1,4 @@
-import "./chunk-ZS7NZCD4.js";
+import "./chunk-G3PMV62Z.js";
 
 // node_modules/nanoid/url-alphabet/index.js
 var urlAlphabet = "useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict";
@@ -15,8 +15,7 @@ var customRandom = (alphabet, defaultSize, getRandom) => {
       let j = step;
       while (j--) {
         id += alphabet[bytes[j] & mask] || "";
-        if (id.length === size)
-          return id;
+        if (id.length === size) return id;
       }
     }
   };
